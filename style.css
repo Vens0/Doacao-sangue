@@ -1,0 +1,12 @@
+#bloco {
+    padding: 15px;
+    border-radius: 10px;
+    justify-self: center;
+    background-color: rgb(255, 246, 234);
+    justify-items: center;
+
+}
+
+body{
+    background-color: rgb(255, 128, 128);
+}

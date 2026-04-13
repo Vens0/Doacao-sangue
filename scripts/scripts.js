@@ -62,6 +62,10 @@ document.getElementById("formsangue").addEventListener("submit", function (e) {
         return alert("É obrigatório informar seu telefone");
     }
 
+    if (!/^[0-9]+$/.test(telefone)) {
+        return alert("O telefone aceita apenas números");
+    }
+
     if (cidade === "") {
         return alert("É obrigatório informar sua cidade");
     }

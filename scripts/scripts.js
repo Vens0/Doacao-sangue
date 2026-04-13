@@ -19,4 +19,33 @@ document.getElementById("formsangue").addEventListener("submit", function (e) {
     let estado = document.getElementById("estado").value;
 
 
+    if (nome === "") {
+        return alert("É obrigatório preencher o nome completo");
+    }
+
+    if (email === "") {
+        return alert("É obrigatório preencher o email");
+    }
+
+    if (idade === "") {
+        return alert("É obrigatório preencher a idade");
+    }
+
+    if (idade < 16) {
+        return alert("É obrigatório ser maior de 16 anos");
+    }
+
+    if (peso === "") {
+        return alert("É obrigatório preencher o peso");
+    }
+
+    if (peso < 50) {
+        return alert("O peso mínimo para doar é de 50kg");
+    }
+
+    if (tiposangue === "") {
+        return alert("É obrigatório informar o tipo sanguíneo");
+    }
+
+    document.getElementById("resultado").innerHTML = "Cadastro realizado com sucesso! <br>" + "Nome: " + nome;
 })

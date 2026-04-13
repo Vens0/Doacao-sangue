@@ -1,11 +1,10 @@
+let info = [];
+
 document.getElementById("formsangue").addEventListener("submit", function (e) {
 
     e.preventDefault();
 
     let nome = document.getElementById("nome").value;
-
-    let nomeDividido = nome.split("");
-    let sobrenome = nomeDividido[1];
 
     let email = document.getElementById("email").value;
 
@@ -30,12 +29,12 @@ document.getElementById("formsangue").addEventListener("submit", function (e) {
         return alert("Informe um nome válido");
     }
 
-    if (nomeDividido = "") {
-        return alert("É obrigatório informar o sobrenome");
-    }
-
     if (email === "") {
         return alert("É obrigatório preencher o email");
+    }
+
+    if(!email.includes("@")){
+        return alert("É obrigatório o email conter '@' ");
     }
 
     if (idade === "") {
@@ -74,5 +73,19 @@ document.getElementById("formsangue").addEventListener("submit", function (e) {
         return alert("É obrigatório informar seu estado");
     }
 
-    document.getElementById("resultado").innerHTML = "Cadastro realizado com sucesso! <br>" + "Nome: " + nome;
+    let infon = {
+        nome: nome,
+        email: email,
+        idade: idade,
+        peso: peso,
+        tiposangue: tiposangue,
+        telefone: telefone,
+        cidade: cidade,
+        estado: estado,
+
+    };
+
+    info.push(infon);
+
+    document.getElementById("resultado").innerHTML = "Cadastro realizado com sucesso! <br>" + "Nome: " + nome + "<br> Email:" + email + "<br> Idade:" + idade + "<br> Peso:" + peso + "<br> Tipo Sanguíneo:" + tiposangue + "<br> Telefone:" + telefone + "<br> Cidade:" + cidade + "<br> Estado:" + estado;
 })
